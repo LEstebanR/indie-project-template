@@ -1,11 +1,12 @@
 import { Outlet } from "@tanstack/react-router";
 import { Footer } from "./footer";
+import Header from "@components/ui/header";
 
 export function Layout() {
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <header className="w-full">Mi Header aquí</header>
-      <main className="flex-1 w-full">
+      <Header />
+      <main className="flex-1 w-full mt-18">
         <Outlet />
       </main>
       <Footer />
