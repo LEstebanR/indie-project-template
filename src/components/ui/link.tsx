@@ -16,7 +16,7 @@ export const CustomLink = ({
   return (
     <Link
       to={href}
-      className="hover:underline hover:text-primary hover:animate-underline-link underline-offset-4 decoration-2 transition-all duration-300"
+      className=" hover:text-primary hover:animate-underline-link underline-offset-4 decoration-2 transition-all duration-300"
       target={blank ? "_blank" : "_self"}
     >
       <div className="flex flex-row items-center gap-1">
@@ -26,3 +26,4 @@ export const CustomLink = ({
     </Link>
   );
 };
+export { Link };
