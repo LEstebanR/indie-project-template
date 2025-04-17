@@ -1,15 +1,29 @@
-import { CustomLink } from "./link";
 import { Github, Heart } from "lucide-react";
 import { Logo } from "@components/ui/logo";
+import { CustomLink } from "@components/ui/link";
+
+const LINKS = [
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "home",
+    href: "/",
+  },
+];
 
 export const Footer = () => {
   return (
     <footer className="my-8 w-full flex flex-col items-center gap-8">
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-col items-center">
         <Logo />
-        <p>Links</p>
+        <div className="flex gap-4">
+          {LINKS.map((link) => {
+            return <CustomLink href={link.href}>{link.label}</CustomLink>;
+          })}
+        </div>
       </div>
-
       <div className=" flex flex-wrap  items-center justify-center gap-x-1 gap-y-3 sm:gap-x-2 ">
         <CustomLink
           href="https://github.com/LEstebanR/lesteban"
