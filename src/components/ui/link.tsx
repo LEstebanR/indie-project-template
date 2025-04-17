@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from '@tanstack/react-router'
+import { clsx } from 'clsx'
 
 export const CustomLink = ({
   children,
@@ -8,23 +9,29 @@ export const CustomLink = ({
   blank,
   action,
   className,
+  type,
 }: {
-  children: React.ReactNode;
-  href: string;
-  withIcon?: boolean;
-  icon?: React.ReactNode;
-  blank?: boolean;
-  action?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-  className?: string;
+  children: React.ReactNode
+  href: string
+  withIcon?: boolean
+  icon?: React.ReactNode
+  blank?: boolean
+  action?: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  className?: string
+  type?: string
 }) => {
   return (
     <Link
       to={href}
-      className={`hover:text-primary hover:animate-underline-link underline-offset-4 decoration-2 transition-all duration-300 ${className || ""}`}
-      target={blank ? "_blank" : "_self"}
+      className={clsx(
+        'hover:text-primary hover:animate-underline-link decoration-2 underline-offset-4 transition-all duration-300',
+        className,
+        type === 'text' ? 'hover:underline' : null
+      )}
+      target={blank ? '_blank' : '_self'}
       onClick={(e) => {
         if (action) {
-          action(e);
+          action(e)
         }
       }}
     >
@@ -33,6 +40,6 @@ export const CustomLink = ({
         {children}
       </div>
     </Link>
-  );
-};
-export { Link };
+  )
+}
+export { Link }

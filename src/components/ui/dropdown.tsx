@@ -3,21 +3,21 @@ import {
   PopoverButton,
   PopoverPanel,
   Transition,
-} from "@headlessui/react";
-import { ReactNode } from "react";
-import { CustomLink } from "@components/ui/link";
-import clsx from "clsx";
+} from '@headlessui/react'
+import { ReactNode } from 'react'
+import { CustomLink } from '@components/ui/link'
+import clsx from 'clsx'
 
-type OptionType = { label: string; href: string };
+type OptionType = { label: string; href: string }
 
 type DropDownProps = {
-  options: OptionType[];
-  type: "icon" | "text";
-  icon?: ReactNode;
-  label?: string;
-  className?: string;
-  action?: () => void;
-};
+  options: OptionType[]
+  type: 'icon' | 'text'
+  icon?: ReactNode
+  label?: string
+  className?: string
+  action?: () => void
+}
 
 export function DropDown({
   options,
@@ -27,11 +27,11 @@ export function DropDown({
   className,
 }: DropDownProps) {
   return (
-    <Popover className={clsx("relative", className)}>
+    <Popover className={clsx('relative', className)}>
       {({ close }) => (
         <>
-          <PopoverButton className="flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 focus:outline-none h-10 min-w-[40px]">
-            {type === "icon" ? icon : label}
+          <PopoverButton className="flex h-10 min-w-[40px] items-center gap-2 rounded-md px-4 py-2 text-sm font-medium text-gray-700 focus:outline-none">
+            {type === 'icon' ? icon : label}
           </PopoverButton>
           <Transition
             enter="transition ease-out duration-200"
@@ -43,7 +43,7 @@ export function DropDown({
           >
             <PopoverPanel
               anchor="bottom"
-              className="absolute -ml-1 mt-4 z-50 flex w-48 flex-col rounded-lg bg-white p-2 shadow-xl border border-black m-1"
+              className="absolute z-50 m-1 mt-4 -ml-1 flex w-48 flex-col rounded-lg border border-black bg-white p-2 shadow-xl"
             >
               {options.map((option: OptionType) => (
                 <CustomLink
@@ -60,5 +60,5 @@ export function DropDown({
         </>
       )}
     </Popover>
-  );
+  )
 }

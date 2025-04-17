@@ -1,10 +1,10 @@
-import { CustomLink } from "@components/ui/link";
+import { CustomLink } from '@components/ui/link'
 
 export function Home() {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="flex w-full flex-col items-center justify-center">
       <p className="text-primary">Hello world!!</p>
       <CustomLink href="/about">About</CustomLink>
     </div>
-  );
+  )
 }
