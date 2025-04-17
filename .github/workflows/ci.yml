@@ -25,13 +25,13 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run ESLint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Run TypeScript type check
-        run: pnpm typecheck
+        run: npm run typecheck
 
       - name: Run tests
-        run: pnpm test
+        run: npm run test
