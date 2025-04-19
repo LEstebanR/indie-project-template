@@ -1,12 +1,18 @@
-import * as prettierPluginTailwind from 'prettier-plugin-tailwindcss'
-
+/** @type {import('prettier').Options} */
 export default {
-  plugins: [prettierPluginTailwind],
+  printWidth: 80,
+  tabWidth: 2,
+  useTabs: false,
   semi: false,
   singleQuote: true,
+  quoteProps: 'as-needed',
+  jsxSingleQuote: false,
   trailingComma: 'es5',
-  tabWidth: 2,
-  printWidth: 80,
+  bracketSpacing: true,
   arrowParens: 'always',
+  endOfLine: 'auto',
+  plugins: ['prettier-plugin-tailwindcss'],
+  tailwindConfig: './tailwind.config.js',
+  jsxBracketSameLine: false,
+  bracketSameLine: false,
 }
-

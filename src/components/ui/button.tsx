@@ -5,8 +5,8 @@ import { CustomLink } from '@components/ui/link'
 interface ButtonProps {
   children?: React.ReactNode
   variant?: 'solid' | 'outline'
-  color?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
+  color?: 'primary' | 'secondary' | 'black'
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
   className?: string
   type?: 'link' | 'icon'
   href?: string
@@ -15,12 +15,14 @@ interface ButtonProps {
 }
 
 const defaultClasses =
-  'p-1 rounded-md border-1 text-sm hover:opacity-80 hover:shadow-lg transition-all duration-300 cursor-pointer'
+  'py-1 px-2 h-8 rounded-md border-1 text-sm hover:opacity-80 hover:shadow-lg transition-all duration-300 cursor-pointer'
 
 const sizeClasses = {
   sm: 'w-12',
   md: 'w-18',
-  lg: 'w-24',
+  lg: 'w-48',
+  xl: 'w-56',
+  full: 'w-full',
 }
 
 export function Button({
@@ -47,6 +49,10 @@ export function Button({
     secondary: {
       solid: 'bg-secondary text-secondary border-secondary',
       outline: 'border-secondary text-secondary',
+    },
+    black: {
+      solid: 'bg-black text-white',
+      outline: '',
     },
   }
 
