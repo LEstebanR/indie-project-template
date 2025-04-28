@@ -10,6 +10,7 @@ export const CustomLink = ({
   action,
   className,
   type,
+  isMenu,
 }: {
   children: React.ReactNode
   href: string
@@ -19,6 +20,7 @@ export const CustomLink = ({
   action?: (event: React.MouseEvent<HTMLAnchorElement>) => void
   className?: string
   type?: string
+  isMenu?: boolean
 }) => {
   return (
     <Link
@@ -26,7 +28,8 @@ export const CustomLink = ({
       className={clsx(
         'hover:text-primary hover:animate-underline-link decoration-2 underline-offset-4 transition-all duration-300',
         className,
-        type === 'text' ? 'hover:underline' : null
+        type === 'text' ? 'hover:underline' : null,
+        isMenu ? null : 'text-link'
       )}
       target={blank ? '_blank' : '_self'}
       onClick={(e) => {

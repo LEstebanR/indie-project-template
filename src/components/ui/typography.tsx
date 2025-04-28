@@ -66,3 +66,7 @@ export const Body = ({
 export const Emphasized = ({ children }: { children: React.ReactNode }) => {
   return <span className="text-secondary text-base font-bold">{children}</span>
 }
+
+export const Info = ({ children }: TypographyType) => {
+  return <p className="text-xs">{children}</p>
+}
