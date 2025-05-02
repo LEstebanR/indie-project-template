@@ -5,12 +5,23 @@ type ChipProps = {
   children: ReactNode
   className?: string
   color?: string
+  textColor?: string
 }
 
-export function Chip({ children, className, color = 'primary' }: ChipProps) {
+export function Chip({
+  children,
+  className,
+  color = 'primary',
+  textColor = 'white',
+}: ChipProps) {
   return (
     <div
-      className={clsx('w-max rounded-full px-4 py-2', `bg-${color}`, className)}
+      className={clsx(
+        'flex h-8 w-max items-center justify-center rounded-full px-4',
+        `bg-${color}`,
+        `text-${textColor}`,
+        className
+      )}
     >
       {children}
     </div>

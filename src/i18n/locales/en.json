@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Indie project template",
+    "typography": "Typography",
+    "button": "Button",
+    "chip": "Chip"
+  },
+  "language": {
+    "en": "EN",
+    "es": "ES"
+  }
+}

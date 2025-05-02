@@ -3,6 +3,7 @@ import { Logo } from '@components/ui/logo'
 import { Button } from './button'
 import { DropDown } from '@components/ui/dropdown'
 import { Menu } from 'lucide-react'
+import { LanguageToggle } from './language-toggle'
 
 const HEADER_LINKS = [
   {
@@ -39,6 +40,7 @@ const Header = () => {
           <Button type="link" href="/signup">
             SignUp
           </Button>
+          <LanguageToggle />
           <DropDown
             className="md:hidden"
             options={HEADER_LINKS}
