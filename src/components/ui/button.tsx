@@ -16,7 +16,7 @@ interface ButtonProps {
 }
 
 const defaultClasses =
-  'flex items-center justify-center py-1 px-2 h-12 rounded-md border-1 text-sm hover:opacity-80 hover:shadow-lg transition-all duration-300 cursor-pointer'
+  'flex items-center justify-center py-1 px-2 h-8 rounded-md border-1 text-sm hover:opacity-80 hover:shadow-lg transition-all duration-300 cursor-pointer'
 
 const sizeClasses = {
   sm: 'w-12',

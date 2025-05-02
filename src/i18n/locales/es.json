@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Plantilla de proyecto indie",
+    "typography": "Tipografía",
+    "button": "Botón",
+    "chip": "Chip"
+  },
+  "language": {
+    "en": "EN",
+    "es": "ES"
+  }
+}
