@@ -70,6 +70,7 @@ const docSections = [
 
 export function AppSidebar() {
   const [activeComponent, setActiveComponent] = useState<string | null>(null);
+  const [activeDocSection, setActiveDocSection] = useState<string | null>(null);
   const pathname = usePathname();
   const isDocsPage = pathname.includes("/docs");
 
@@ -77,6 +78,7 @@ export function AppSidebar() {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       setActiveComponent(params.get("component"));
+      setActiveDocSection(params.get("section"));
     }
   }, []);
 
@@ -143,10 +145,7 @@ export function AppSidebar() {
               <SidebarMenu>
                 {docSections.map((section) => {
                   const isActive =
-                    pathname === "/docs" &&
-                    new URLSearchParams(window.location.search).get(
-                      "section"
-                    ) === section.name;
+                    pathname === "/docs" && activeDocSection === section.name;
                   return (
                     <SidebarMenuItem key={section.name}>
                       <SidebarMenuButton asChild isActive={isActive}>
