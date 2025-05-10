@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/lesteban/Documents/projects/indie-project-template/src/app/signup/loading.tsx"],"sourcesContent":["export default function SignupLoading() {\n  return <div>SignupLoading</div>;\n}\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACtB,qBAAO,6WAAC;kBAAI;;;;;;AACd","debugId":null}}]
-}
