@@ -27,6 +27,8 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const componentGroups = [
   {
@@ -68,8 +70,16 @@ const docSections = [
 ];
 
 export function AppSidebar() {
+  const [activeComponent, setActiveComponent] = useState<string | null>(null);
   const pathname = usePathname();
   const isDocsPage = pathname.includes("/docs");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      setActiveComponent(params.get("component"));
+    }
+  }, []);
 
   return (
     <Sidebar>
@@ -108,10 +118,7 @@ export function AppSidebar() {
                   <SidebarMenu>
                     {group.items.map((item) => {
                       const isActive =
-                        pathname === "/" &&
-                        new URLSearchParams(window?.location?.search).get(
-                          "component"
-                        ) === item.name;
+                        pathname === "/" && activeComponent === item.name;
                       return (
                         <SidebarMenuItem key={item.name}>
                           <SidebarMenuButton asChild isActive={isActive}>
