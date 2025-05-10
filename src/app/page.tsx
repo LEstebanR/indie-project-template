@@ -1,9 +1,10 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import ButtonShowcase from "@/components/showcases/button-showcase";
-export default function Home() {
+
+function ComponentViewer() {
   const searchParams = useSearchParams();
   const componentParam = searchParams.get("component");
   const [activeComponent, setActiveComponent] = useState(
@@ -65,6 +66,7 @@ export default function Home() {
         return "Botones";
     }
   };
+
   return (
     <div className="max-w-5xl mx-auto">
       <header className="mb-10">
@@ -84,5 +86,13 @@ export default function Home() {
 
       <div className="p-6 border rounded-lg bg-card">{renderComponent()}</div>
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ComponentViewer />
+    </Suspense>
   );
 }
