@@ -13,7 +13,7 @@ export function Hero() {
       <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center md:w-8/12">
         Title message
       </h1>
-      <p className="text-4xl md:text-6xl font-bold tracking-tight text-center md:w-8/12 mb-8 bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+      <p className="text-4xl md:text-6xl font-bold tracking-tight text-center md:w-8/12 mb-8 bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent pb-1">
         Subtitle message
       </p>
       <p className="text-xl text-muted-foreground mb-8 text-justify max-w-2xl mx-auto leading-relaxed">

@@ -45,7 +45,7 @@ export function Header() {
     <header className="w-full flex items-center justify-center h-16 sticky top-0 bg-background z-50 ">
       <div className=" flex items-center justify-between md:w-8/12 w-full px-2 md:px-0">
         <Logo />
-        <div className="items-center gap-x-8 hidden md:flex border rounded-full px-12 py-2">
+        <div className="items-center gap-x-8 hidden md:flex border border-black rounded-full px-12 py-2">
           {LINKS.map((link) => (
             <a
               key={link.label}
